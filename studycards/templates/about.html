@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block titlebar %}
+    <h1>STUDY CARDS</h1>
+{% endblock titlebar %}
+
+{% block content %}
+    <h1>About Study Cards</h1>
+    <p>Study Cards are based on the idea of index cards.  For a single subject you would have a set of cards
+    perhaps wrapped in a rubber band.  Unlike hand written cards, you can easily change what information
+    appears on each side of study cards.  You can review your cards with all of the information easily viewable on one side,
+        or flash your cards by putting some items on the front and the rest on the back. </p>
+    <p>To begin either create a new Card Set or Select a Card Set for more options. </p>
+{% endblock content %}
+
+{% block actionbar %}
+    <a href="{{ url_for('home')}}">Home</a>
+
+{% endblock actionbar %}

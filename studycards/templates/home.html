@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block titlebar %}
+    <h1>WELCOME TO STUDY CARDS</h1>
+{% endblock titlebar %}
+
+{% block content %}
+    <p>Use the drop-down menu below <br>to choose a current Card Set, <br>or use the link below to create a new one.</p>
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <div class="form-group">
+                {{ form.selected_cardset.label(class="form-control-label") }}
+                 {{ form.selected_cardset(class="form-control form=control-lg") }}
+            </div>
+        </fieldset>
+
+
+
+{% endblock content %}
+
+{% block actionbar %}
+
+    {{ form.submit(class="btn btn-outline-info")}}
+    <a href="{{ url_for('cardset') }}">Create New Cardset</a>
+    <a href="{{ url_for('about')}}">About</a>
+    </form>
+{% endblock actionbar %}
+
+{%  block javascript %}
+{% endblock javascript %}

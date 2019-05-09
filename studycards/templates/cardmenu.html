@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block titlebar %}
+    <h1>CARD MENU</h1>
+{% endblock titlebar %}
+
+{% block content %}
+    <h2>Current Card Set is: </h2>
+    <hr width="80%" class="border: 2px">
+    <h2>{{cardset_title}}</h2>
+    <hr width="60%">
+    <p>{{ cardset_description }}</p>
+
+{% endblock content %}
+
+{% block actionbar %}
+    <a href="{{ url_for('newcard') }}">Add a New Card</a>
+    <a href="{{ url_for('reviewcards') }}">Review Cards</a>
+    <a href="{{ url_for('home')}}">Home</a>
+    <a href="{{ url_for('about')}}">About</a>
+
+{% endblock actionbar %}

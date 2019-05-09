@@ -1,0 +1,66 @@
+/*Main Library of CSS functions for the website.*/
+
+body {
+    background-color: #11557C;
+}
+.menubar,.actionbar {
+    background-color: #3A7734;
+    height: 10vh;
+}
+.spacer {
+    width: 100%
+}
+main {
+    width: 100%
+}
+.wrapper {
+    width: 100%;
+    height: 100vh;
+    display: block;
+    background-color: #9C1A1C;
+}
+/*The row class is used for the center section of the webpages*/
+.row {
+    height: 75vh;
+    margin-top: 0vh;
+    margin-bottom: 1vh;
+}
+.content {
+
+}
+#card {
+    background-color: white;
+    text-align: center;
+}
+.actionbar {
+    background-color: black;
+    text-align: center;
+}
+.titlebar {
+    font-family: sans-serif;
+    text-align: center;
+    background-color: lightblue;
+}
+.about {
+    display: inline-flex;
+}
+.form-control-label {
+    font-sixe: 4vh;
+}
+
+h1 {
+    font-size: 8vh;
+}
+h2 {
+    font-size: 6vh;
+}
+p {
+    font-size: 4vh;
+}
+a {
+    margin-left: 2ch;
+}
+a:hover {
+  filter: invert(100)
+}
+

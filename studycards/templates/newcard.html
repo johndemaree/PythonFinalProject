@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block titlebar %}
+    <h1>CREATE A NEW CARD</h1>
+{% endblock titlebar %}
+{% block content %}
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <div class="form-group">
+                {{ form.keyword_one.label(class="form-control-label") }}
+
+                    {% if form.keyword_one.errors %}
+                        {{ form.keyword_one(class="form-control form-control-sm is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.keyword_one.errors %}
+                                <span>{{ error }}</span>
+                            {%  endfor %}
+                        </div>
+                    {%  else %}
+                {{ form.keyword_one(class="form-control form-control-sm") }}
+                    {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.keyword_two.label(class="form-control-label") }}
+
+                    {% if form.keyword_two.errors %}
+                        {{ form.keyword_two(class="form-control form-control-sm is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.keyword_two.errors %}
+                                <span>{{ error }}</span>
+                            {%  endfor %}
+                        </div>
+                    {%  else %}
+                {{ form.keyword_two(class="form-control form-control-sm") }}
+                    {% endif %}
+            </div>
+
+            <div class="form-group">
+                {{ form.definition.label(class="form-control-label") }}
+                    {% if form.definition.errors %}
+                        {{ form.definition(class="form-control form-control-sm is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.definition.errors %}
+                                <span>{{ error }}</span>
+                            {%  endfor %}
+                        </div>
+                    {% else %}
+                {{ form.definition(class="form-control form-control-sm") }}
+                    {% endif %}
+            </div>
+        </fieldset>
+{% endblock content %}
+{% block actionbar %}
+        <div class="form-group">
+            {{ form.submit(class="btn btn-outline-info")}}
+            {{ form.finish (class ="btn btn-outline-info") }}
+        </div>
+    </form>
+{% endblock actionbar %}
