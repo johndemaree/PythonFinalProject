@@ -1,4 +1,4 @@
-{# This tempate displays the form used to create a new card within a card set.
+{# This tempate displays the form used to edit cards.
   It extends the layout.html template.  #}
 
 {% extends "layout.html" %}
@@ -43,6 +43,7 @@
         </div>
         <div class="image">
            <div class="form-group">
+                <img src="static\images\{{ form.image_one.data }}">
                {{ form.image_one.label() }}<br>
                {{ form.image_one(class="form-control-file-sm") }}
                {%  for error in form.image_one.errors %}
@@ -68,9 +69,27 @@
 {% endblock content %}
 {% block actionbar %}
         <div class="form-group">
-            {{ form.submit(class="btn btn-warning btn-sm")}}
-            {{ form.finish (class="btn btn-danger btn-sm") }}
-            <a href="{{ url_for('cardmenu') }}" class="btn btn-success btn-sm" role="button">Cancel</a>
+            {{ form.finish (class ="btn btn-warning btn-sm") }}
+            <a href="{{ url_for('reviewcards') }}" class="btn btn-success btn-sm" role="button">Cancel</a>
+            <a href="#" class="btn btn-danger btn-sm" role="button" onclick="confirmDelete()">Delete Card</a>
+
         </div>
     </form>
+
 {% endblock actionbar %}
+{%  block javascript %}
+    {# This script opens a confirm diaglog box when the user presses the delete button #}
+    <script>
+        function confirmDelete() {
+        var txt;
+        var r = confirm("WARNING!\nYou are about to permanently DELETE this card!");
+        if (r == true) {
+            {# this sets the form.delete element to true so the route will delete the card. #}
+            document.getElementsByName('delete').checked = true;
+            document.forms["editcard"].submit();
+        }
+
+}
+</script>
+
+{%  endblock javascript %}

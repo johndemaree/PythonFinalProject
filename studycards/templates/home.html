@@ -1,3 +1,7 @@
+{# This tempate displays the home (main) page of the program.
+   This includes the cardset selection form and buttons to create, edit and display cardsets
+  It extends the layout.html template.  #}
+
 {% extends "layout.html" %}
 
 {% block titlebar %}
@@ -21,9 +25,10 @@
 
 {% block actionbar %}
 
-    {{ form.submit(class="btn btn-outline-info")}}
-    <a href="{{ url_for('cardset') }}">Create New Cardset</a>
-    <a href="{{ url_for('about')}}">About</a>
+    {{ form.submit(class="btn btn-success btn-sm")}}
+    <a href="{{ url_for('about')}}"class="btn btn-info btn-sm">About</a>
+    {{ form.edit (class ="btn btn-warning btn-sm") }}
+    <a href="{{ url_for('cardset') }}"class="btn btn-danger btn-sm">Create Cardset</a>
     </form>
 {% endblock actionbar %}
 

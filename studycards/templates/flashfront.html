@@ -1,0 +1,33 @@
+{# This tempate displays the front of the flash card routine.
+  It extends the layout.html template.  #}
+{% extends "layout.html" %}
+{% block titlebar %}
+    <h2>{{ current_card.mycardset }} : Front of Card {{ current_card_number }} of {{ number_of_cards }}</h2>
+{% endblock titlebar %}
+
+{% block content %}
+
+    {% if image_1 !="blank.jpg": %}
+    <div class="keywords">
+        <h1>{{ key_1 }}</h1>
+        <h1>{{ key_2 }}</h1>
+    </div>
+
+        <div class="image">
+            <img src="static\images\{{ image_1 }}">
+        </div>
+    {% else %}
+        <h1>{{ key_1 }}</h1>
+        <h1>{{ key_2 }}</h1>
+    {% endif %}
+
+    <div class="text_one">
+        <p> {{ text_1 }}</p>
+    </div>
+{% endblock content %}
+
+{% block actionbar %}
+    <a href="{{ url_for('cardmenu') }}"class="btn btn-primary btn-sm" role="button">Menu</a>
+    <a href="{{ url_for('flashback') }}"class="btn btn-success btn-sm" role="button">Show Back</a>
+
+{% endblock actionbar %}

@@ -1,0 +1,48 @@
+{# This tempate displays the back of the flash card routine.
+   There are notes below which explain parts of the code used to display in gray the
+   items that were displayed on the front of the same card.
+  It extends the layout.html template.  #}
+{% extends "layout.html" %}
+{% block titlebar %}
+    <h2>{{ current_card.mycardset }} : Back of Card {{ current_card_number }} of {{ number_of_cards }}</h2>
+{% endblock titlebar %}
+
+{% block content %}
+    {# The following code is used to grey text and images from the front of the card. #}
+    {# This highlights the text and images that are selected to be on the back of the card. #}
+    {% if image_1 !="blank.jpg": %}
+        <div class="keywords">
+    {%  endif %}
+            {% if key_1[:1] == "?": %}
+                <h2 style="color:#CCCCCC">{{ key_1[1:] }}</h2>
+            {% else: %}
+                <h1>{{ key_1 }}</h1>
+            {% endif %}
+            {% if key_2[:1] == "?": %}
+                <h2 style="color:#CCCCCC">{{ key_2[1:] }}</h2>
+            {% else: %}
+                <h1>{{ key_2 }}</h1>
+            {% endif %}
+    {% if image_1 !="blank.jpg": %}
+        </div>
+        <div class="image" >
+            {% if image_1[:1] == "?": %}
+                <img id="backimage" src="static\images\{{ image_1[1:] }}">
+            {% else: %}
+                <img src="static\images\{{ image_1 }}">
+            {% endif %}
+        </div>
+    {% endif %}
+
+    {% if text_1[:1] == "?": %}
+        <p style="color:#CCCCCC">{{ text_1[1:] }}</p>
+    {% else: %}
+        <p>{{ text_1 }}</p>
+    {% endif %}
+{% endblock content %}
+
+{% block actionbar %}
+    <a href="{{ url_for('cardmenu') }}"class="btn btn-primary btn-sm" role="button">Menu</a>
+    <a href="{{ url_for('flashfront') }}"class="btn btn-success btn-sm" role="button">Next</a>
+
+{% endblock actionbar %}

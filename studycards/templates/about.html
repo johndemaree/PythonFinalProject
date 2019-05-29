@@ -1,18 +1,118 @@
+{# This tempate displays the about page which containes instructions and helpful information.
+  It extends the layout.html template.  #}
+
 {% extends "layout.html" %}
 {% block titlebar %}
-    <h1>STUDY CARDS</h1>
+    <h1>ABOUT STUDY CARDS</h1>
 {% endblock titlebar %}
 
 {% block content %}
-    <h1>About Study Cards</h1>
-    <p>Study Cards are based on the idea of index cards.  For a single subject you would have a set of cards
-    perhaps wrapped in a rubber band.  Unlike hand written cards, you can easily change what information
-    appears on each side of study cards.  You can review your cards with all of the information easily viewable on one side,
-        or flash your cards by putting some items on the front and the rest on the back. </p>
-    <p>To begin either create a new Card Set or Select a Card Set for more options. </p>
+    <div class="about">
+        <p><strong>Welcome to Study Cards, the virtual study helper.</strong></p>
+
+        <p>Study Cards are based on the idea of index cards.  With these virtual cards you get to choose how they are organized.
+            And each time you use them they can be organized a completely different way. Unlike hand written cards, you can easily change what information
+        appears on each side of study cards.  You can review your cards with all of the information easily viewable on one side,
+            or flash your cards by putting some items on the front and the rest on the back. </p>
+
+        <h2>General Instructions</h2>
+        <p><strong>Home Page:</strong> When you start the program you begin on the home page.  From here you can do one of three actions.</pI>
+
+        <p><u>Select a Card Set:</u>  Use the drop down menu to select one of the Card Sets you have already created.  Then clikc
+        the Select Cardset  button.</p>
+
+        <p><u>Create a new Card Set:</u>  If this is your fist time using the program or you are ready to create a new
+                Card Set simply click the Create CardSet button.  Then fill in the title and description.  The title must be unique.  </p>
+
+        <p><u>Edit a Card Set:</u>  Use the drop down menu to select one of the Card Sets you have already created
+        and then click the Edit Cardset button to pull up a form that will aloow you to edit the title and description of that
+        cardset.</p>
+
+        <p><strong>Card Menu:</strong>  Once you have selected a cardset you will be taken to the Card Menu.  Here you can select one of a variaty of options.</p>
+
+        <p><u>Add New Card</u>  The first thing you will need to do is add new cards to your Card Set.  Click
+        on the Add New Card button to open a form that will allow you to enter the infromation including up to 2 keywords, a text entry, and a picture
+        for each card.  In the Add New Card Form you can click on Add Another Card.  This will save the Card you are working on and
+        clear the form to add an aditional Card.  When you enter your last Card click on the Finish button to return to the Card Menu.</p>
+
+        <p><u>Reivew Cards: </u> To review your cards with all of the information on one side simply clikc on the Reivew Cards button.
+        This will allow you to view each card in your set in the order they were added.</p>
+
+        <p><u>Edit/Delete Cards: </u> Once you are reviewing your cards an Edit and Delete button will appear
+        in the menu bar at the bottom.  Use these bottons to Edit or Delete the card that is currently on the screen.</p>
+
+        <p><u>Flash Cards: </u> To use your cards as Flash Cards click on the Flash Cards button.
+        This will open up a form that allows you to select which items show up on the front of the card, and the back of the card.
+        This is the true power behind StudyCards because you can create multiple different versions of your cards each time you run
+        the Flash Card part of the program. </p>
+        <p>Items only on the back will appear as ? on the front of the card so you can remember what it is your are trying to guess.  Items from the front of
+        the card will appear gray when the back of the card is revealed.  </p>
+
+        <h2>Step-by-Step Instructions</h2>
+        <p><strong>Create a new Set of Cards:</strong></p>
+        <ol>
+            <li><p>Go to the home page  localhost:5000/</p>
+            <li><p>Click on "Create New Cardset"</p>
+            <li><p>Enter the Title and Description of the new Cardset</p>
+            <li><p>Click on "Create New Cardset"</p>
+        </ol>
+
+
+        <p><strong>Select a Cardset:</strong></p>
+        <ol>
+            <li><p>Go to the home page  localhost:5000/</p>
+            <li><p>Use the drop down menu to select a Cardset</p>
+            <li><p>Click on "Select Cardset</p>
+        </ol>
+
+        <p><strong>Edit a Cardset:</strong></p>
+    <ol>
+        <li><p>Go to the home page localhost:5000/</p>
+        <li><p>Use the drop down menu to select a Cardset</p>
+        <li><p>Click on  "Edit CardSet"</p>
+    </ol>
+        <p><strong>Add Cards to Cardset:</strong></p>
+    <ol>
+        <li><p>Follow the instructions above for Selecting a Cardset</p>
+        <li><p>Click on "Add a New Card"</p>
+        <li><p>Enter the Key1, Key2, and Definition of the new Card.</p>
+        <li><p>Click "Add Another Card"  to add that card and then create a new card.</p>
+        <li><p>Click "Finish" to add final Card and return to Card Menu.</p>
+    </ol>
+        <p><strong>Review Cards</strong></p>
+    <ol>
+        <li><p>Follow the instructions above for Selecting a Cardset</p>
+        <li><p>Click on "Review Cards"</p>
+        <li><p>Use the "Previous Card" and "Next Card" to Clycle through the Cards<br>
+		Note:  The card number you are viewing is displayed to the top right of the Card.</p>
+    </ol>
+        <p><strong>Edit/Delet Cards</strong></p>
+    <ol>
+        <li><p>Follow the instructions above for Review Cards</p>
+        <li><p>Select the Card you want to edit or delete</p>
+        <li><p>Click on "Edit"</p>
+        <li><p>Click on "Finish" after you have made changes to save those changes</p>
+        <li><p>Clock on "Delete"  to delete the current card.</p>
+    </ol>
+        <p><strong>Flash Cards</strong></p>
+    <ol>
+        <li><p>Follow the instructions above for Selecting a Cardset</p>
+        <li><p>Click on "Flash Cards"</p>
+		<li><p>Use the form to select which items will appear on the Front of the Card and then the Back.<br>
+        Note:  You can select items to appear on both front and back, or neither front or back.</p>
+		<li><p>Click on "Submit"  The cards will be sorted in a random order and the Front of the first card will appear.</p>
+        <li><p>Click on "Back"  to reveal the back of the card.</p>
+        <li><p>Click on "Next"  to reveal the front of the next card.</p>
+    </ol>
+
+        <h2>Author</h2>
+        <p> This program was craeted by John Demaree. All of the material in this program are copyrighted May of 2019.  It is the Final Project of Grossmont College Course
+        CSIS-250 Intro to Python. </p>
+
+    </div>
 {% endblock content %}
 
 {% block actionbar %}
-    <a href="{{ url_for('home')}}">Home</a>
-
+    <a href="{{ url_for('home')}}" class="btn btn-info" role="button">Home</a>
 {% endblock actionbar %}
+

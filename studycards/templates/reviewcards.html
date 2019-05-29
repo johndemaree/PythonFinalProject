@@ -1,17 +1,31 @@
+{# This tempate displays the each card in the review cards routine.
+   Advancing cards is downwith the prevcard and nextcardd routes which this
+   template then displays the result.
+  It extends the layout.html template.  #}
+
 {% extends "layout.html" %}
+
 {% block titlebar %}
-    <h2>{{ this_card.mycardset }} : Card {{ current_card_number }} of {{ number_of_cards }}</h2>
+    <h2>{{ current_card.mycardset }} : Card {{ current_card_number }} of {{ number_of_cards }}</h2>
 {% endblock titlebar %}
 
 {% block content %}
-    <h1>Key1: {{ this_card.keyword_one }}</h1>
-    <h2>Key2: {{ this_card.keyword_two }}</h2>
-    <p> Definition: {{ this_card.definition }}</p>
+    <div class="keywords">
+        <h1>{{ current_card.keyword_one }}</h1>
+        <h1>{{ current_card.keyword_two }}</h1>
+    </div>
+    <div class="image">
+        <img src="static\images\{{ current_card.image_one }}">
+    </div>
+    <div class="text_one">
+        <p>{{ current_card.text_one }}</p>
+    </div>
 {% endblock content %}
 
 {% block actionbar %}
-    <a href="{{ url_for('prevcard') }}">Previous Card</a>
-    <a href="{{ url_for('home') }}">Home</a>
-    <a href="{{ url_for('nextcard') }}">Next Card</a>
+    <a href="{{ url_for('prevcard') }}"class="btn btn-success btn-sm" role="button">Previous Card</a>
+    <a href="{{ url_for('cardmenu') }}"class="btn btn-primary btn-sm" role="button">Menu</a>
+    <a href="{{ url_for('nextcard') }}"class="btn btn-success btn-sm" role="button">Next Card</a>
+    <a href="{{ url_for('editcard') }}"class="btn btn-danger btn-sm" role="button">Edit</a>
 
 {% endblock actionbar %}

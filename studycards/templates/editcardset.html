@@ -1,8 +1,7 @@
-{# This tempate displays the form to create a new card set.
+{# This tempate displays the page used to edit a cardset's title and description.
   It extends the layout.html template.  #}
 
 {% extends "layout.html" %}
-
 {% block titlebar %}
     <h1>Create New Card Set</h1>
 {% endblock titlebar %}
@@ -47,7 +46,7 @@
 
 {% block actionbar %}
         <div class="form-group">
-            {{ form.submit(class="btn btn-outline-info")}}
+            {{ form.savedit(class="btn btn-outline-info")}}
             <a href="{{ url_for('home') }}" class="btn btn-success btn-sm" role="button">Cancel</a>
 
         </div>

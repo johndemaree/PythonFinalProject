@@ -1,6 +1,6 @@
-'''The Models module is used to create the tables for the SQLAlchemy database.
+"""The Models module is used to create the tables for the SQLAlchemy database.
 They also have specific lines that determine their relationship to each other.
-They are are in a 1 to many relationship with 1 CardSet relating to many Cards.'''
+They are are in a 1 to many relationship with 1 CardSet relating to many Cards."""
 
 from studycards import db
 
@@ -18,7 +18,8 @@ class Card (db.Model):
     id = db.Column(db.Integer, primary_key=True)
     keyword_one = db.Column(db.String(20), nullable=False)
     keyword_two = db.Column(db.String(20), nullable=False)
-    definition = db.Column(db.String(100), nullable=False)
+    text_one = db.Column(db.String(100), nullable=False)
+    image_one = db.Column(db.String(20), nullable=False, default='default.png')
     #cardset_id stores the id of the CardSet this Card is related to.
     cardset_id = db.Column(db.Integer, db.ForeignKey('cardset.id'), nullable=False)
     def __repr__(self):

@@ -1,3 +1,7 @@
+{# This tempate displays the main menu for working with cards within a cardset.
+   It includes buttons for creating, editing, reviewing, and flashing cards.
+  It extends the layout.html template.  #}
+
 {% extends "layout.html" %}
 
 {% block titlebar %}
@@ -5,7 +9,7 @@
 {% endblock titlebar %}
 
 {% block content %}
-    <h2>Current Card Set is: </h2>
+    <p>Current Card Set is: </p>
     <hr width="80%" class="border: 2px">
     <h2>{{cardset_title}}</h2>
     <hr width="60%">
@@ -14,9 +18,10 @@
 {% endblock content %}
 
 {% block actionbar %}
-    <a href="{{ url_for('newcard') }}">Add a New Card</a>
-    <a href="{{ url_for('reviewcards') }}">Review Cards</a>
-    <a href="{{ url_for('home')}}">Home</a>
-    <a href="{{ url_for('about')}}">About</a>
+    <a href="{{ url_for('reviewcards') }}" class="btn btn-success btn-sm" role="button">Review Cards</a>
+    <a href="{{ url_for('flashmenu') }}" class="btn btn-success btn-sm" role="button">Flash Cards</a>
+    <a href="{{ url_for('home')}}" class="btn btn-warning btn-sm" role="button">Home</a>
+    <a href="{{ url_for('about')}}" class="btn btn-info btn-sm" role="button">About</a>
+    <a href="{{ url_for('newcard') }}" class="btn btn-danger btn-sm" role="button">Add a New Card</a>
 
 {% endblock actionbar %}

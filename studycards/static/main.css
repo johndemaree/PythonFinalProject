@@ -17,7 +17,7 @@ main {
     width: 100%;
     height: 100vh;
     display: block;
-    background-color: #9C1A1C;
+    background-color: #555555;
 }
 /*The row class is used for the center section of the webpages*/
 .row {
@@ -25,13 +25,40 @@ main {
     margin-top: 0vh;
     margin-bottom: 1vh;
 }
-.content {
 
-}
 #card {
     background-color: white;
     text-align: center;
 }
+.keywords {
+    width: 50%;
+    min-height: 60%;
+    display: inline-block;
+    float: left;
+}
+
+.image {
+    width: 50%;
+    min-height: 60%;
+    display: inline-block;
+    float: right;
+}
+.image img {
+    max-width: 90%;
+    max-height: 90%;
+    border: 2px solid black;
+}
+.image img:hover {
+    width: 150%;
+}
+#backimage  {
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+}
+.text_one {
+    clear: left;
+}
+
 .actionbar {
     background-color: black;
     text-align: center;
@@ -41,9 +68,7 @@ main {
     text-align: center;
     background-color: lightblue;
 }
-.about {
-    display: inline-flex;
-}
+
 .form-control-label {
     font-sixe: 4vh;
 }
@@ -61,6 +86,26 @@ a {
     margin-left: 2ch;
 }
 a:hover {
-  filter: invert(100)
+    border-color: white;
+}
+.inline-field input,
+.inline-field label {
+    display: inline-block;
+    margin-bottom: 0; /* I added this after I posted my reply */
+    vertical-align: middle; /* Fixes any weird issues in Firefox and IE */
+}
+h1 .cardfront {
+    color: #FF0000;
+}
+.btn-danger {
+    margin-left: 6ch;
+}
+.about {
+    overflow-y: scroll;
+    max-height: 70vh;
+    text-align: left;
+}
+.about p {
+    font-size: 3vh;
 }
 

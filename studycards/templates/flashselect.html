@@ -1,0 +1,67 @@
+{# This tempate displays the form to select which items will appear on the front and back of the flash cards.
+  It extends the layout.html template.  #}
+
+{% extends "layout.html" %}
+
+{% block titlebar %}
+    <h1>Select Items to show on Flash Cards</h1>
+{% endblock titlebar %}
+
+
+{% block content %}
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+    <h2> Front of Card</h2>
+        <fieldset class="form-group">
+            <span class="form-group inline-field">
+                {{ form.front_key_1(class=" form-control-sm") }}
+                {{ form.front_key_1.label(class="form-control-label") }}
+            </span>
+                <br>
+            <span class="form-group inline-field">
+                {{ form.front_key_2(class=" form-control-sm") }}
+                {{ form.front_key_2.label(class="form-control-label") }}
+            </span>
+                <br>
+            <span class="form-group inline-field">
+                {{ form.front_image_1(class=" form-control-sm") }}
+                {{ form.front_image_1.label(class="form-control-label") }}
+            </span>
+                <br>
+            <span class="form-group inline-field">
+                {{ form.front_text_1(class="form-control-sm") }}
+                {{ form.front_text_1.label(class="form-control-label") }}
+            </span>
+            <hr>
+    <h2> Back of Card</h2>
+            <span class="form-group inline-field">
+                {{ form.back_key_1(class="form-control-sm") }}
+                {{ form.back_key_1.label(class="form-control-label") }}
+                <br>
+            </span>
+            <span class="form-group inline-field">
+                {{ form.back_key_2(class="form-control-sm") }}
+                {{ form.back_key_2.label(class="form-control-label") }}
+            </span>
+                <br>
+            <span class="form-group inline-field">
+                {{ form.back_image_1(class="form-control-sm") }}
+                {{ form.back_image_1.label(class="form-control-label") }}
+            </span>
+                <br>
+            <span class="form-group inline-field">
+                {{ form.back_text_1(class="form=control-sm") }}
+                {{ form.back_text_1.label(class="form-control-label") }}
+            </span>
+        </fieldset>
+
+{%  endblock content %}
+
+{% block actionbar %}
+        <div class="form-group">
+            {{ form.submit(class="btn btn-outline-info")}}
+            <a href="{{ url_for('home') }}" class="btn btn-success btn-sm" role="button">Cancel</a>
+
+        </div>
+    </form>
+{% endblock actionbar %}

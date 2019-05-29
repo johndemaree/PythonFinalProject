@@ -1,3 +1,10 @@
+"""Initial File for StudyCards Package
+  Created: by John Demaree
+  Date:  May 2019
+  For: CSIS-250-4704  Introduction to Python
+     Grossmont Community College"""
+
+
 from flask import Flask, session
 from flask_sqlalchemy import SQLAlchemy
 #from session import Session
