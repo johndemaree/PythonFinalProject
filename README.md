@@ -56,7 +56,7 @@ Instructions:
 	Add Cards to Cardset:
 		1.  Follow the instructions above for Select a Cardset
 		2.  Click on "Add a New Card"
-		3.  Enter the Key1, Key2, and Definition of the new Card.
+		3.  Enter the Key1, Key2, Text, and Image for the new Card.
 		4.  Click "Add Another Card"  to add that card and then create a new card.
 		5.  Click "Finish" to add final Card and return to Card Menu. 
 

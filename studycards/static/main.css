@@ -79,6 +79,9 @@ h1 {
 h2 {
     font-size: 6vh;
 }
+h3 {
+    font-size: 4vh;
+}
 p {
     font-size: 4vh;
 }
@@ -107,5 +110,9 @@ h1 .cardfront {
 }
 .about p {
     font-size: 3vh;
+}
+.studycards {
+    color: white;
+    background-color: gold;
 }
 
