@@ -1,13 +1,15 @@
-# PythonFinalProject
+PythonFinalProject
 
-Date:  May 28, 2019
-Project Name:  StudyCards
-Project Status:  Final Project - Full Funcionality
-Project Creator:  John Demaree
+	Date:  May 28, 2019
+	Project Name:  StudyCards
+	Project Status:  Final Project - Full Funcionality
+	Project Creator:  John Demaree
 
 
 Installing:
+
 	python - This program was written using Python 3.7.2
+
 	venv -  I have created my package within the optional virtual environment venv 
 
 	Libraries & Dependencies using pip install

@@ -1,1 +1,0 @@
-from studycards import db
